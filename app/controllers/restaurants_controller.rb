@@ -7,8 +7,9 @@ class RestaurantsController < ApplicationController
         end
         def show
             restaurants= Restaurant.find(params[:id])
-             render json: restaurants
+             render json: restaurants, status: :ok
         end
+        
         def destroy
             restaurants=Restaurant.find(params[:id])
             restaurants.destroy
